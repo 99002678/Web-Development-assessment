@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script src="../Common.js"></script>
+    <script src="../empData.js"></script>
+    <style>
+        body{
+                background-color: lightgray;
+                color: maroon;
+            }
+    </style>
+      <script>
+          let mgr = new empManager();
+          function init(){
+     $show("div1");}
+        function onAddEmployee(){
+            let name = $("empName").value;
+            let dob = $("empDOB").value;
+            let qualification = $("empQualification").value;
+            let gen = $("gender").value;
+            mgr.addEmployee(emp);
+    
+         $("empName").value = "";
+         $("empDOB").value = "";
+         $("empQualification").value="";
+         $("gender").value="";
+           
+        }
+        </script>
+</head>
+<body onload="init()">
+    <div id="div1">
+    <h1>Employee Details</h1>
+    <section>
+        <form>
+            <p>Enter the Name:<input type="text" id="empName" /></p>
+            <p>Enter the Date of Birth:<input type="date" id="empDOB" /></p>
+            <p>
+                Select the Highest Qualification:<br/>
+                <select id="empQualification">
+                    <option>----Choose One----</option>
+                    <option>Graduation</option>
+                    <option>Under Graduation</option>
+                    <option>Post Graduation</option>
+                    <option>Pre University</option>
+                    <option>School</option>
+                </select>
+            </p>
+            <p>
+                Gender:
+                <input type="radio" id="gender" /> Male
+                <input type="radio" id="gender" /> Female
+            </p>
+            <button type="submit" value="Submit">Submit</button>
+        </form>
+        <br />
+        <hr />
+        
+            <button type="submit" value="Submit" onclick="onAddEmployee()">Display</button>
+            <!-- <p><button onclick="onAddEmployee()">Add Employee</button></p> -->
+            
+        </div>
+</body>
+</html>
